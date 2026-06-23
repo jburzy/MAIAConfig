@@ -1,3 +1,5 @@
+import os
+
 from GaudiKernel.Constants import INFO, WARNING, DEBUG
 from Configurables import CKFTrackingAlg, ACTSDuplicateRemoval, FilterTracksAlg, TrackTruthAlg, RefitFinal
 from Common.muc_mt import get_mt_args
@@ -6,6 +8,11 @@ def CKFTracker_cfg(args):
     """
     Create a new CKFTrackingAlg instance for CKF tracking.
     """
+    # Time-aware (4D) seeding cuts, controlled via environment variables so the
+    # CPU-impact scan can vary them without editing the config. A value of -1
+    # disables the cut (3D seeding), matching the upstream default behaviour.
+    seedDeltaTMax = float(os.environ.get("SEED_DELTATMAX", "-1"))
+    seedFilterDeltaTMax = float(os.environ.get("SEEDFILTER_DELTATMAX", "-1"))
     return CKFTrackingAlg(
         "Reconstructor",
         RunCKF = True,
@@ -17,6 +24,8 @@ def CKFTracker_cfg(args):
         SeedFinding_SigmaScattering = 50,
         SeedFinding_CollisionRegion = 6,
         SeedFinding_RadLengthPerSeed = 0.1,
+        SeedFinding_DeltaTMax = seedDeltaTMax,
+        SeedFilter_DeltaTMax = seedFilterDeltaTMax,
         SeedingSensorsCellIDs = ["system:1", "system:2,layer:1|2|3"],
         OutputTrackCollection = "AllTracks",
         OutputSeedCollection = "SeedTracks",
