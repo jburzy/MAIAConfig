@@ -1,5 +1,6 @@
 from GaudiKernel.Constants import INFO, WARNING, DEBUG
-from Configurables import TrackTruthAlg, TrackPerfHistAlg
+#from Configurables import TrackTruthAlg, TrackPerfHistAlg
+from Configurables import TrackTruthAlg
 
 def trackTruth_cfg():
     """
