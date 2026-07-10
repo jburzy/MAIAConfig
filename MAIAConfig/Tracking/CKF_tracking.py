@@ -30,9 +30,11 @@ def CKFTracker_cfg(args):
         SeedFinding_CollisionRegion = 6,
         SeedFinding_RadLengthPerSeed = 0.1,
         # 4D tracking: include the hit time as a 3rd measurement dimension
-        # (eBoundTime) in the Kalman filter, with a flat per-hit time resolution.
+        # (eBoundTime) in the Kalman filter, with per-sensor time resolutions
+        # mirroring the digitiser's ResolutionT settings (vertex / tracker).
         UseHitTimeInCKF = True,
-        HitTimeResolution = 0.10,
+        HitTimeResolutionCellIDs = ["system:1|2", "system:3|4|5|6"],
+        HitTimeResolutionValues = [0.03, 0.06],
         SeedingSensorsCellIDs = ["system:1", "system:2,layer:1|2|3"],
         OutputTrackCollection = "AllTracks",
         OutputSeedCollection = "SeedTracks",
