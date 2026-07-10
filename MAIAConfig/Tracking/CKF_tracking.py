@@ -8,7 +8,9 @@ def CKFTracker_cfg(args):
     return CKFTrackingAlg(
         "Reconstructor",
         RunCKF = True,
-        CKF_Chi2CutOff = 10,
+        # With the time measurement included, the chi2 has one more degree of
+        # freedom, so the per-surface cut is loosened from 10 to 12.
+        CKF_Chi2CutOff = 12,
         # Hits with chi2CutOff <= local chi2 < chi2CutOffOutlier are kept as outliers; above -> hole.
         CKF_Chi2CutOffOutlier = 25,
         # CKF branch stopper: terminate fake branches early instead of extending
@@ -27,6 +29,10 @@ def CKFTracker_cfg(args):
         SeedFinding_SigmaScattering = 50,
         SeedFinding_CollisionRegion = 6,
         SeedFinding_RadLengthPerSeed = 0.1,
+        # 4D tracking: include the hit time as a 3rd measurement dimension
+        # (eBoundTime) in the Kalman filter, with a flat per-hit time resolution.
+        UseHitTimeInCKF = True,
+        HitTimeResolution = 0.10,
         SeedingSensorsCellIDs = ["system:1", "system:2,layer:1|2|3"],
         OutputTrackCollection = "AllTracks",
         OutputSeedCollection = "SeedTracks",
