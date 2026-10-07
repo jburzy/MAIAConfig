@@ -43,6 +43,7 @@ def CKFTracker_cfg(args):
         SeedFinding_CollisionRegion = 6,
         SeedFinding_RadLengthPerSeed = 0.1,
         SeedFinding_DoubletTimeCutNSigma = 3,
+        SeedFinding_TripletTimeChi2Max = 12,
         SeedFinding_InteractionPointCut = True,
         SeedFilter_CompatSeedWeight = 0,
         SeedingSensorsCellIDs = ["system:1", "system:2,layer:1|3|5"],
