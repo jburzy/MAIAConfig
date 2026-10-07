@@ -21,7 +21,7 @@ def CKFTracker_cfg(args):
     return CKFTrackingAlg(
         "Reconstructor",
         RunCKF = True,
-        CKF_Chi2CutOff = 10,
+        CKF_Chi2CutOff = 12,
         # Hits with chi2CutOff <= local chi2 < chi2CutOffOutlier are kept as outliers; above -> hole.
         CKF_Chi2CutOffOutlier = 25,
         # CKF branch stopper: terminate fake branches early instead of extending
@@ -43,6 +43,8 @@ def CKFTracker_cfg(args):
         SeedFinding_CollisionRegion = 6,
         SeedFinding_RadLengthPerSeed = 0.1,
         SeedingSensorsCellIDs = ["system:1", "system:2,layer:1|2|3"],
+        UseHitTimeInCKF = True,
+        HitTimeResolutions = {"system:1|2": 0.03, "system:3|4|5|6": 0.06},
         AddEndcapCaloState = True,
         OutputTrackCollection = "AllTracks",
         OutputSeedCollection = "SeedTracks",
