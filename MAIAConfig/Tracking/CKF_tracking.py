@@ -34,7 +34,7 @@ def CKFTracker_cfg(args):
         BranchStopper_PtMin = 0.5,
         BranchStopper_PtMinMeasurements = 4,
         SeedFinding_RMax = 150,
-        SeedFinding_MinPt = 500,
+        SeedFinding_MinPt = 1000,
         SeedFinding_ImpactMax = 3,
         # CKF_NumMeasurementsCutOff: controls the CKF branching during track extension.
         # Set to 1 to keep only the best candidate.
