@@ -38,7 +38,7 @@ def CKFTracker_cfg(args):
         SeedFinding_ImpactMax = 3,
         # CKF_NumMeasurementsCutOff: controls the CKF branching during track extension.
         # Set to 1 to keep only the best candidate.
-        CKF_NumMeasurementsCutOff = 2,
+        CKF_NumMeasurementsCutOff = 1,
         SeedFinding_SigmaScattering = 50,
         SeedFinding_CollisionRegion = 6,
         SeedFinding_RadLengthPerSeed = 0.1,
