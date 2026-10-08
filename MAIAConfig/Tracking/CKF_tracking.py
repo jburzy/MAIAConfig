@@ -46,6 +46,7 @@ def CKFTracker_cfg(args):
         SeedFinding_TripletTimeChi2Max = 12,
         SeedFinding_InteractionPointCut = True,
         SeedFilter_CompatSeedWeight = 0,
+        InitialTrackError_QOverP = 0.03,
         SeedingSensorsCellIDs = ["system:1", "system:2,layer:1|3|5"],
         SeedFinding_zBinEdges = ["-599", "-240", "-160", "-100", "-70", "-20", "20", "70", "100", "160", "240", "599"],
         UseHitTimeInCKF = True,
