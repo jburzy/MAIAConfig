@@ -29,7 +29,7 @@ def CKFTracker_cfg(args):
         # (>= 8 hits, <= 2 holes).
         UseBranchStopper = True,
         BranchStopper_MaxHoles = 2,
-        BranchStopper_MaxOutliers = 3,
+        BranchStopper_MaxOutliers = 1,
         BranchStopper_MinMeasurements = 8,
         BranchStopper_PtMin = 1.0,
         BranchStopper_PtMinMeasurements = 4,
