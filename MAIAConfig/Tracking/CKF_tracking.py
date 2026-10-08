@@ -31,7 +31,7 @@ def CKFTracker_cfg(args):
         BranchStopper_MaxHoles = 2,
         BranchStopper_MaxOutliers = 3,
         BranchStopper_MinMeasurements = 8,
-        BranchStopper_PtMin = 0.5,
+        BranchStopper_PtMin = 1.0,
         BranchStopper_PtMinMeasurements = 4,
         SeedFinding_RMax = 150,
         SeedFinding_MinPt = 1000,
@@ -99,7 +99,7 @@ def track_filter_cfg(name = "Filterer", input = "DedupedTracks", output = "SiTra
     return FilterTracksAlg(
         name,
         InputTrackCollectionName = [input],
-        MinPt = "0.5",
+        MinPt = "1.0",
         MaxD0 = 10,
         MaxZ0 = 10,
         NHitsInner = "0",
