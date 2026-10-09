@@ -28,7 +28,7 @@ def CKFTracker_cfg(args):
         # them through the whole detector, aligned with the downstream selection
         # (>= 8 hits, <= 2 holes).
         UseBranchStopper = True,
-        BranchStopper_MaxHoles = 2,
+        BranchStopper_MaxHoles = 1,
         BranchStopper_MaxOutliers = 1,
         BranchStopper_MinMeasurements = 8,
         BranchStopper_PtMin = 1.0,
